@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    "lib/app/**"
+    "lib/.build/**"
+    "lib/dist/**"
+  ],
+  "verbose": false,
+  "watch": [
+    "lib/**",
+    "config/**"
+  ],
+  "ext": "js json"
+}
