@@ -1,6 +1,3 @@
-/*jslint es5: true, devel: true, node: true, indent: 2, vars: true, nomen: true */
-/*global */
-
 'use strict';
 
 module.exports = function (grunt) {
@@ -17,9 +14,9 @@ module.exports = function (grunt) {
     'sprite:build',
     'less:dist',
     'ngmin',
-    'uglify',
     'useminPrepare',
     'concat',
+    'uglify',
     'usemin'
   ]);
   

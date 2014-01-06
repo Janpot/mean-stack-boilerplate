@@ -1,8 +1,8 @@
 {
   "restartable": "rs",
   "ignore": [
-    "lib/app/**"
-    "lib/.build/**"
+    "lib/app/**",
+    "lib/.build/**",
     "lib/dist/**"
   ],
   "verbose": false,

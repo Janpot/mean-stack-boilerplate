@@ -1,6 +1,3 @@
-/*jslint es5: true, devel: true, node: true, indent: 2, vars: true, nomen: true */
-/*global */
-
 'use strict';
 
 var fs = require('fs');
@@ -21,13 +18,13 @@ module.exports = function (grunt) {
   // Project configuration.
   var config = {
     // Metadata.
-    tasksFolder: './grunt-tasks/',
-    port: 3001,
-    appFolder  : './lib/app/',
-    buildFolder: './lib/.build/',
-    distFolder : './lib/dist/',
+    tasksFolder : './grunt-tasks/',
+    serverFolder: './server/',
+    appFolder   : './app/',
+    buildFolder : './.build/',
+    distFolder  : './dist/',
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %>*/\n\n',
+    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %>*/\n\n'
   };
   
   require('load-grunt-tasks')(grunt);

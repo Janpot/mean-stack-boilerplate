@@ -5,16 +5,12 @@ var express        = require('express'),
     config         = require('config'),
     authentication = require('./services/authentication'),
     passport       = require('passport'),
-    mongoose       = require('mongoose'),
     redis          = require('./services/redis'),
     csrf           = require('./services/csrf'),
     RedisStore     = require('connect-redis')(express);
 
 
-
-
 // initialize models
-mongoose.connect(config.mongodb.uri, config.mongodb.options);
 require(path.resolve(__dirname, 'models'));
 
 
@@ -47,12 +43,15 @@ app.configure(function () {
   app.use(app.router);
   
   if (config.mountDist) {
-    app.set('views', __dirname + '/dist');
-    app.use(express.static(__dirname + '/dist'));
+    var distFolder = path.resolve(__dirname, '../dist');
+    app.set('views', distFolder);
+    app.use(express.static(distFolder));
   } else {
-    app.set('views', __dirname + '/app');
-    app.use(express.static(__dirname + '/app'));
-    app.use(express.static(__dirname + '/.build'));
+    var appFolder = path.resolve(__dirname, '../app'),
+        buildFolder = path.resolve(__dirname, '../.build');
+    app.set('views', appFolder);
+    app.use(express.static(appFolder));
+    app.use(express.static(buildFolder));
   }
   
 });
@@ -91,4 +90,4 @@ app.use('/users/*', authentication.ensureAuthenticated);
 
 
 
-app.listen(config.port);
+module.exports = app;
