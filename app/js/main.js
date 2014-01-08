@@ -2,8 +2,7 @@
 
 angular.module('app', [
   'ngRoute',
-  'ngAnimate',
-  'ngSanitize'
+  'ngAnimate'
 ]).config(function (
   $locationProvider,
   $routeProvider

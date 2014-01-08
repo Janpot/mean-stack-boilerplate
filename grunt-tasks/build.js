@@ -14,9 +14,9 @@ module.exports = function (grunt) {
     'sprite:build',
     'less:dist',
     'ngmin',
+    'uglify',
     'useminPrepare',
     'concat',
-    'uglify',
     'usemin'
   ]);
   

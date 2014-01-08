@@ -4,6 +4,6 @@ module.exports = {
     cwd: '<%= buildFolder %>js/',
     src: ['**/*.js'],
     dest: '<%= buildFolder %>js/',
-    ext: '.js'
+    ext: '.min.js'
   }
 };
